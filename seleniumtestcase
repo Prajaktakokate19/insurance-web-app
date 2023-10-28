@@ -14,7 +14,7 @@ public class App {
 	@SuppressWarnings({ "deprecation" })
 	public static void main(final String[] args) throws InterruptedException, IOException {
 		//System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-		System.setProperty("webdriver.chrome.driver", "F:\\chromedriver-win64\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Classic Engineers\\Documents\\chromedriver-win64\\chromedriver.exe");
 		final ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--remote-allow-origins=*", "ignore-certificate-errors");
 		//chromeOptions.addArguments(new String[] { "--headless" });
@@ -23,10 +23,10 @@ public class App {
 		final WebDriver driver = (WebDriver) new ChromeDriver(chromeOptions);
 		driver.get("http://15.206.67.95:8089/contact.html");
 		driver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
-		driver.findElement(By.id("inputName")).sendKeys(new CharSequence[] { "Vikul" });
-		driver.findElement(By.id("inputNumber")).sendKeys(new CharSequence[] { "9999999999" });
-		driver.findElement(By.id("inputMail")).sendKeys(new CharSequence[] { "vikul@gmail.com" });
-		driver.findElement(By.id("inputMessage")).sendKeys(new CharSequence[] { "Welcome to the DevOps doubt session" });
+		driver.findElement(By.id("inputName")).sendKeys(new CharSequence[] { "Prajakta" });
+		driver.findElement(By.id("inputNumber")).sendKeys(new CharSequence[] { "9876543210" });
+		driver.findElement(By.id("inputMail")).sendKeys(new CharSequence[] { "prajaktak19@gmail.com" });
+		driver.findElement(By.id("inputMessage")).sendKeys(new CharSequence[] { "Selenium test for Insurance web application" });
 		driver.findElement(By.id("my-button")).click();
 		final String message = driver.findElement(By.id("response")).getText();
 		if (message.equals("Message Sent")) {
